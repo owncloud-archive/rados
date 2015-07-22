@@ -21,7 +21,7 @@ sudo chmod go+r /etc/ceph/ceph.client.admin.keyring
 Object storage can not yet be set up with the installation dialog. For now just leave the default data folder path and manually configure the objectstore after installation.
 
 ## Configuration
-To activate object store mode add a `objectstore` entry to the config.php like this:
+To activate object store mode add an `objectstore` entry to the config.php like this:
 
 ```php
   'objectstore' => array(
