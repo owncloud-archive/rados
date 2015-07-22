@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<info>
+	<id>rados</id>
+	<name>Ceph Rados storage support</name>
+	<description>This app uses the php bindings for librados to directly interface with a Ceph cluster and use it as the primary storage for ownCloud.</description>
+	<version>0.0.1</version>
+	<licence>AGPL</licence>
+	<author>Jörn Dreyer</author>
+	<requiremin>7</requiremin>
+	<types>
+		<filesystem/>
+	</types>
+	<category>other</category><!-- TODO a storage category would be nice -->
+	<bugs>http://github.com/owncloud/rados/issues</bugs>
+	<repository type="git">http://github.com/owncloud/rados.git</repository>
+	<dependencies>
+		<lib>rados</lib>
+		<os>Linux</os>
+		<owncloud min-version="7" />
+	</dependencies>
+</info>
