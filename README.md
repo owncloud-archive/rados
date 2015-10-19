@@ -1,7 +1,9 @@
 # rados
-This app uses the php bindings for librados to directly interface with a Ceph cluster and use it as the primary storage for ownCloud.
+This *experimental* app uses the php bindings for librados to directly interface with a Ceph cluster and use it as the primary storage for ownCloud.
 
 ## Installation
+
+Place this app into an owncloud apps folder. just like any other app. It does not need to be activated, since the objectstorage implementation is used by setting it up in the [config.php](#set-up).
 
 This app requres you to [install](https://github.com/ceph/phprados/blob/master/INSTALL) the [php bindings for librados](https://github.com/ceph/phprados).
 
@@ -33,6 +35,11 @@ To activate object store mode add an `objectstore` entry to the config.php like 
 
 The objectstore kind of replaces the data directory. By default, the ownCloud log file and the sqlite db will be saved in the data directory. Even when objectstore is configured. However, sqlite is highly unlikely to be used in conjunction with objectstore and the log file path can be changed in config.php. So, in theory the data folder can be empty. However old apps might not use our stream wrappers to access their data and as a result a writable data folder might be needed to achieve backward compatibility.
 
-# Todo
+# Known issues
 
-- [ ] unit test this on travis ... needs investigation on how to install docker and then start ceph/demo 
+- [x] ~~objectstore api in core is broken~~ testsuite added in https://github.com/owncloud/core/pull/19414
+- [ ] remaining fixes in https://github.com/owncloud/core/pull/17641 still need to be merged
+- [ ] unit test this on travis ... needs investigation on how to install docker and then start ceph/demo
+- [ ] files are stored as a single object, which is not how librados should be used. When the above has been fixed and we have a testsuite for this app we can investigate https://github.com/owncloud/rados/pull/2
+
+
