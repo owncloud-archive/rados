@@ -37,8 +37,8 @@ The objectstore kind of replaces the data directory. By default, the ownCloud lo
 
 # Known issues
 
-- [x] ~~objectstore api in core is broken~~ testsuite added in https://github.com/owncloud/core/pull/19414
-- [ ] remaining fixes in https://github.com/owncloud/core/pull/17641 still need to be merged
+- [x] ~~objectstore api in core is broken testsuite added in https://github.com/owncloud/core/pull/19414~~
+- [x] ~~remaining fixes in https://github.com/owncloud/core/pull/17641 still need to be merged~~
 - [ ] unit test this on travis ... needs investigation on how to install docker and then start ceph/demo
 - [ ] files are stored as a single object, which is not how librados should be used. When the above has been fixed and we have a testsuite for this app we can investigate https://github.com/owncloud/rados/pull/2
 
